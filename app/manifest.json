@@ -1,0 +1,23 @@
+{
+  "name": "Air Horner",
+  "short_name": "Air Horner",
+  "icons": [{
+        "src": "images/touch/Airhorner_128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      }, {
+        "src": "images/touch/Airhorner_152.png",
+        "type": "image/png",
+        "sizes": "152x152"
+      }, {
+        "src": "images/touch/Airhorner_144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }, {
+        "src": "images/touch/Airhorner_192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }],
+  "start_url": "/?homescreen=1",
+  "display": "standalone"
+}
