@@ -1,0 +1,14 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Paul Kinlan
+
+# THANKS
+
+  My team for not getting so annoyed that they hit me.
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3, Web Audio, Web Starter Kit
