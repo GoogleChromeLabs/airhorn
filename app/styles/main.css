@@ -45,154 +45,80 @@ body {
     -ms-flex-pack: center;
     justify-content: center
 }
-@media screen and (orientation: portrait) {
-    .horn {
-        height: 50vw;
-        width: 50vw
+
+.horn {
+    height: 50vmin;
+    width: 50vmin;
+}
+.horn .inner {
+    height: 40vmin;
+    width: 40vmin;
+}
+.horn .inner .center {
+    height: 5vmin;
+    width: 5vmin;
+}
+@-webkit-keyframes center-horning {
+    from {
+        width: 5vmin;
+        height: 5vmin;
     }
-    .horn .inner {
-        height: 40vw;
-        width: 40vw
-    }
-    .horn .inner .center {
-        height: 5vw;
-        width: 5vw
-    }
-    @-webkit-keyframes center-horning {
-        from {
-            width: 5vw;
-            height: 5vw
-        }
-        to {
-            width: 4.6vw;
-            heigt: 5.4vw
-        }
-    }
-    @keyframes center-horning {
-        from {
-            width: 5vw;
-            height: 5vw
-        }
-        to {
-            width: 4.6vw;
-            heigt: 5.4vw
-        }
-    }
-    @-webkit-keyframes middle-horning {
-        from {
-            width: 40vw;
-            height: 40vw
-        }
-        to {
-            width: 40.2vw;
-            heigt: 40.1vw
-        }
-    }
-    @keyframes middle-horning {
-        from {
-            width: 40vw;
-            height: 40vw
-        }
-        to {
-            width: 40.2vw;
-            heigt: 40.1vw
-        }
-    }
-    @-webkit-keyframes horning {
-        from {
-            width: 50vw;
-            height: 50vw
-        }
-        to {
-            width: 50.1vw;
-            heigt: 50.2vw
-        }
-    }
-    @keyframes horning {
-        from {
-            width: 50vw;
-            height: 50vw
-        }
-        to {
-            width: 50.1vw;
-            heigt: 50.2vw
-        }
+    to {
+        width: 4.6vmin;
+        heigt: 5.4vmin;
     }
 }
-@media screen and (orientation: landscape) {
-    .horn {
-        height: 50vh;
-        width: 50vh
+@keyframes center-horning {
+    from {
+        width: 5vmin;
+        height: 5vmin;
     }
-    .horn .inner {
-        height: 40vh;
-        width: 40vh
-    }
-    .horn .inner .center {
-        height: 5vh;
-        width: 5vh
-    }
-    @-webkit-keyframes center-horning {
-        from {
-            width: 5vh;
-            height: 5vh
-        }
-        to {
-            width: 4.6vh;
-            heigt: 5.4vh
-        }
-    }
-    @keyframes center-horning {
-        from {
-            width: 5vh;
-            height: 5vh
-        }
-        to {
-            width: 4.6vh;
-            heigt: 5.4vh
-        }
-    }
-    @-webkit-keyframes middle-horning {
-        from {
-            width: 40vh;
-            height: 40vh
-        }
-        to {
-            width: 40.2vh;
-            heigt: 40.1vh
-        }
-    }
-    @keyframes middle-horning {
-        from {
-            width: 40vh;
-            height: 40vh
-        }
-        to {
-            width: 40.2vh;
-            heigt: 40.1vh
-        }
-    }
-    @-webkit-keyframes horning {
-        from {
-            width: 50vh;
-            height: 50vh
-        }
-        to {
-            width: 50.1vh;
-            heigt: 50.2vh
-        }
-    }
-    @keyframes horning {
-        from {
-            width: 50vh;
-            height: 50vh
-        }
-        to {
-            width: 50.1vh;
-            heigt: 50.2vh
-        }
+    to {
+        width: 4.6vmin;
+        heigt: 5.4vmin;
     }
 }
+@-webkit-keyframes middle-horning {
+    from {
+        width: 40vmin;
+        height: 40vmin;
+    }
+    to {
+        width: 40.2vmin;
+        heigt: 40.1vmin;
+    }
+}
+@keyframes middle-horning {
+    from {
+        width: 40vmin;
+        height: 40vmin;
+    }
+    to {
+        width: 40.2vmin;
+        heigt: 40.1vmin;
+    }
+}
+@-webkit-keyframes horning {
+    from {
+        width: 50vmin;
+        height: 50vmin;
+    }
+    to {
+        width: 50.1vmin;
+        heigt: 50.2vmin;
+    }
+}
+@keyframes horning {
+    from {
+        width: 50vmin;
+        height: 50vmin;
+    }
+    to {
+        width: 50.1vmin;
+        heigt: 50.2vmin;
+    }
+}
+
 .horn {
     background-color: #F44336;
     box-shadow: 0 5px 2px 0 #1565C0;
