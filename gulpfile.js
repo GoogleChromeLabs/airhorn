@@ -101,16 +101,10 @@ gulp.task('styles', function() {
     'app/**/*.scss',
     'app/styles/**/*.css'
   ])
-    .pipe($.changed('styles', {extension: '.scss'}))
-    .pipe($.sass({
-      precision: 10,
-      onError: console.error.bind(console, 'Sass error:')
-    }))
     .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(gulp.dest('.tmp'))
     // Concatenate And Minify Styles
     .pipe($.if('*.css', $.csso()))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('dist/styles'))
     .pipe($.size({title: 'styles'}));
 });
 
