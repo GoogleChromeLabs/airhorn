@@ -17,8 +17,7 @@
  *
  */
  
-// Version 0.34
-
+// Version 0.35
 
 importScripts('/cache-polyfill.js');
 
@@ -39,8 +38,6 @@ self.addEventListener('install', function(e) {
 });
 
 self.addEventListener('fetch', function(event) {
-  var url = event.request.url;
-
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
