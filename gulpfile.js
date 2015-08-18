@@ -67,18 +67,18 @@ gulp.task('copy-workerscripts', function() {
     .pipe($.size({title: 'copy-workerscripts'}));
 });
 
-// Copy image files from the Styleguide
-gulp.task('styleguide-images', function() {
-  return gulp.src('app/styleguide/**/*.{svg,png,jpg}')
-    .pipe(gulp.dest('dist/styleguide/'))
-    .pipe($.size({title: 'styleguide-images'}));
-});
-
 // Copy Web Fonts To Dist
 gulp.task('fonts', function() {
   return gulp.src(['app/fonts/**'])
     .pipe(gulp.dest('dist/fonts'))
     .pipe($.size({title: 'fonts'}));
+});
+
+// Copy Sounds To Dist
+gulp.task('sounds', function() {
+  return gulp.src(['app/sounds/**'])
+    .pipe(gulp.dest('dist/sounds'))
+    .pipe($.size({title: 'sounds'}));
 });
 
 // Compile and Automatically Prefix Stylesheets
@@ -194,7 +194,7 @@ gulp.task('serve:dist', ['default'], function() {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-  runSequence('styles', ['html', 'scripts', 'images', 'styleguide-images', 'fonts', 'copy', 'copy-workerscripts'], cb);
+  runSequence('styles', ['html', 'scripts', 'styles', 'images', 'fonts', 'sounds', 'copy', 'copy-workerscripts'], cb);
 });
 
 // Run PageSpeed Insights
