@@ -20,5 +20,6 @@
       }],
   "start_url": "/?homescreen=1",
   "display": "standalone",
-  "background_color": "#2196F3"
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3"
 }
