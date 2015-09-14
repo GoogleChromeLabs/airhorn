@@ -17,7 +17,7 @@
  *
  */
  
-// Version 0.37
+// Version 0.44
 
 importScripts('/cache-polyfill.js');
 
@@ -32,9 +32,15 @@ self.addEventListener('install', function(e) {
         '/styles/main.css',
         '/scripts/main.min.js',
         '/sounds/airhorn.mp3'
-      ]);
+      ]).then(function() {
+        return self.skipWaiting();
+      });
     })
   );
+});
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', function(event) {
