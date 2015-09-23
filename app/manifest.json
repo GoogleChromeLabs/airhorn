@@ -17,6 +17,16 @@
         "src": "images/touch/Airhorner_192.png",
         "type": "image/png",
         "sizes": "192x192"
+      }
+      {
+        "src": "images/touch/Airhorner_256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      }
+      {
+        "src": "images/touch/Airhorner_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
       }],
   "start_url": "/?homescreen=1",
   "display": "standalone",
