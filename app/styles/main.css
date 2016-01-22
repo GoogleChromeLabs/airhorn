@@ -30,7 +30,12 @@ main {
     padding: 20px
 }
 html,
-body {
+body 
+{
+     height: 100%;
+}
+
+#container {
     height: 100%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -43,7 +48,29 @@ body {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
-    justify-content: center
+    justify-content: center;
+    flex-direction: column;
+}
+
+#installer {
+    position: absolute;
+    opacity: 0;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: opacity 300ms ease-in-out;
+}
+
+#installer.available {
+    opacity: 1;
+}
+
+#installer .button {
+    border: solid 1px white;
+    margin:10px;
+    padding: 10px;
+    color: white;
 }
 
 .horn {
@@ -117,6 +144,10 @@ body {
         width: 50.1vmin;
         heigt: 50.2vmin;
     }
+}
+
+#installer {
+    
 }
 
 .horn {
