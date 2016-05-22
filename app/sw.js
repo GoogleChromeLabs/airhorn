@@ -19,9 +19,9 @@
  
 // Version 0.54
 
-self.addEventListener('install', function(e) {
+self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open('airhorner').then(function(cache) {
+    caches.open('airhorner').then(cache => {
       return cache.addAll([
         '/',
         '/index.html',
@@ -30,18 +30,17 @@ self.addEventListener('install', function(e) {
         '/styles/main.css',
         '/scripts/main.min.js',
         '/sounds/airhorn.mp3'
-      ]).then(function() {
-        return self.skipWaiting();
-      });
+      ])
+      .then(() => self.skipWaiting());
     })
-  );
+  )
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate',  event => {
   event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', function(event) {  
+self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
