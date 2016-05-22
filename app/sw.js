@@ -19,8 +19,6 @@
  
 // Version 0.54
 
-importScripts('/cache-polyfill.js');
-
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open('airhorner').then(function(cache) {
@@ -43,9 +41,7 @@ self.addEventListener('activate', function(event) {
   event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('fetch', function(event) {
-  console.log(event.request.url);
-  
+self.addEventListener('fetch', function(event) {  
   event.respondWith(
     caches.match(event.request).then(function(response) {
       return response || fetch(event.request);
