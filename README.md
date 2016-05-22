@@ -31,7 +31,7 @@ start a simple web server up is to use Python's SimpleHTTPServer.  Run the follo
 
 This will just load the existing contents of the directory up and it won't support things like live
 reload and inline optimizations.  To run the project with optimaztions in place and to support live reload
-run the following comman:
+run the following command:
 
     gulp serve
 
