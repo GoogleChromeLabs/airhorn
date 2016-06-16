@@ -86,6 +86,10 @@ body
     height: 5vmin;
     width: 5vmin;
 }
+
+.outer {
+    padding-top: 20px;
+}
 @-webkit-keyframes center-horning {
     from {
         width: 5vmin;
