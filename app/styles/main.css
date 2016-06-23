@@ -30,7 +30,7 @@ main {
     padding: 20px
 }
 html,
-body 
+body
 {
      height: 100%;
 }
@@ -75,35 +75,49 @@ body
 }
 
 .horn {
+    height: 200px;
+    width: 200px;
     height: 50vmin;
     width: 50vmin;
 }
 .horn .inner {
+    height: 160px;
+    width: 160px;
     height: 40vmin;
     width: 40vmin;
 }
 .horn .inner .center {
+    height: 20px;
+    width: 20px;
     height: 5vmin;
     width: 5vmin;
 }
 @-webkit-keyframes center-horning {
     from {
+        height: 20px;
+        width: 20px;
         width: 5vmin;
         height: 5vmin;
     }
     to {
+        width: 18.4px;
+        height: 21.6px;
         width: 4.6vmin;
-        heigt: 5.4vmin;
+        height: 5.4vmin;
     }
 }
 @keyframes center-horning {
     from {
+        width: 20px;
+        height: 20px;
         width: 5vmin;
         height: 5vmin;
     }
     to {
+        width: 18.4px;
+        height: 21.6px;
         width: 4.6vmin;
-        heigt: 5.4vmin;
+        height: 5.4vmin;
     }
 }
 @-webkit-keyframes middle-horning {
@@ -113,42 +127,54 @@ body
     }
     to {
         width: 40.2vmin;
-        heigt: 40.1vmin;
+        height: 40.1vmin;
     }
 }
 @keyframes middle-horning {
     from {
+        height: 160px;
+        width: 160px;
         width: 40vmin;
         height: 40vmin;
     }
     to {
+        height: 160.8px;
+        width: 160.4px;
         width: 40.2vmin;
-        heigt: 40.1vmin;
+        height: 40.1vmin;
     }
 }
 @-webkit-keyframes horning {
     from {
+        height: 200px;
+        width: 200px;
         width: 50vmin;
         height: 50vmin;
     }
     to {
+        width: 200.4px;
+        height: 200.8px;
         width: 50.1vmin;
-        heigt: 50.2vmin;
+        height: 50.2vmin;
     }
 }
 @keyframes horning {
     from {
+        height: 200px;
+        width: 200px;
         width: 50vmin;
         height: 50vmin;
     }
     to {
+        width: 200.4px;
+        height: 200.8px;
         width: 50.1vmin;
-        heigt: 50.2vmin;
+        height: 50.2vmin;
     }
 }
 
 #installer {
-    
+
 }
 
 .horn {
