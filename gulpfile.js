@@ -110,8 +110,12 @@ gulp.task('styles', function() {
 
 // Concatenate And Minify JavaScript
 gulp.task('scripts', function() {
-  var sources = ['app/scripts/*.js',
-    'app/styleguide/wskComponentHandler.js', 'app/styleguide/**/*.js'];
+  var sources = [
+    'node_modules/es6-promise/dist/es6-promise.js',
+    'app/scripts/*.js',
+    'app/styleguide/wskComponentHandler.js',
+    'app/styleguide/**/*.js'];
+
   return gulp.src(sources)
     .pipe($.concat('main.min.js'))
     .pipe($.uglify({preserveComments: 'some'}))
