@@ -29,6 +29,7 @@
         "sizes": "512x512"
       }],
   "start_url": "/?homescreen=1",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#2196F3",
