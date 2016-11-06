@@ -16,8 +16,8 @@
  *  limitations under the License
  *
  */
- 
-// Version 0.56
+
+// Version 0.57
 
 self.addEventListener('install', e => {
   e.waitUntil(
