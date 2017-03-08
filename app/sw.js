@@ -18,18 +18,18 @@
  */
 
 // Version 0.57
+let version = '0.57';
 
 self.addEventListener('install', e => {
+  let timeStamp = Date.now();
   e.waitUntil(
     caches.open('airhorner').then(cache => {
       return cache.addAll([
-        '/',
-        '/index.html',
-        '/index.html?homescreen=1',
-        '/?homescreen=1',
-        '/styles/main.css',
-        '/scripts/main.min.js',
-        '/sounds/airhorn.mp3'
+        `/`,
+        `/index.html?timestamp=${timeStamp}`,
+        `/styles/main.css?timestamp=${timeStamp}`,
+        `/scripts/main.min.js?timestamp=${timeStamp}`,
+        `/sounds/airhorn.mp3?timestamp=${timeStamp}`
       ])
       .then(() => self.skipWaiting());
     })
@@ -42,7 +42,7 @@ self.addEventListener('activate',  event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request).then(response => {
+    caches.match(event.request, {ignoreSearch:true}).then(response => {
       return response || fetch(event.request);
     })
   );
