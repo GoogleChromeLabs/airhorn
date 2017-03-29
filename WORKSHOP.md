@@ -28,22 +28,75 @@ In `app/index.html` add the following script just above the closing `body` tag.
 </script>
 ```
 
+Last step to get started: You to open the application tab in the chrome inspector and select `Service Worker`. There you'll need to click the checkbox for `update on reload` which foces the browser to update the service worker when we make changes and reload. If you don't do this, you won't see any changes without clearing your cache manually.
+
 
 ## Listen for Fetch Events
+
+Let's combine a service worker with the the `fetch` api to listen for all network requests and log the request before responding with the original network request. in `app/sw.js` add the following:
+
+```
+self.addEventListener('fetch', evt => {
+  console.log(evt.request);
+
+  evt.respondWith(fetch(evt.request));
+});
+```
+
+When you refresh the page, check your console and see all the requests. You've inserted middleware into all network requests for assets, data, and even html. That means you can insert a client-side proxy which can modify all network request responses.
+
+You can read more about `fetch` at [MDN/Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
+
+## Prefetch and Cache Assets and HTML
+
+So let's use the the Service Worker to prefetch any assets we specify. Add the following to `app/sw.js`:
+
+```
+self.addEventListener('install', evt => {
+  evt.waitUntil(
+    caches.open('airhorner').then(cache => {
+      return cache.addAll([
+        `/`,
+        `/index.html`,
+        `/styles/main.css`,
+        `/scripts/main.min.js`,
+        `/sounds/airhorn.mp3`
+      ])
+      .then(() => self.skipWaiting());
+    })
+  );
+});
+
+```
+This adds an event listener which will cache a collection of assets when the Service Worker installs. Notice that we're caching `index.html` and `/`. That allows us to cache markup, which we've never been able to do on the web before.
+
+Finally, replace the `fetch` event listener with some code that will attempt to respond with the cache before hitting the network:
+
+```
+self.addEventListener('fetch', evt => {
+  evt.respondWith(
+    caches.match(evt.request).then(response => {
+      return response || fetch(evt.request);
+    })
+  );
+});
+```
+If the network is bad or the user is offline, you'll still be able to load the page because the html and all the assets and data are stored in the cache.
+
+
+
+## Jump Start Service Worker
 
 By default service workers only activate on the second page load. We can jump start this process. Add this code to `app/sw.js`.
 
 ```
-self.addEventListener('install', function(event) {
-  event.waitUntil(self.skipWaiting());
-});
-
 self.addEventListener('activate', function(event) {
   event.waitUntil(self.clients.claim());
 });
 ```
 
-If you open the Chrome Inspector and go to the applications tab, you can check on the status of your service worker
+This is the last bit of code we need to make the whole thing work offline. In the Chrome Inspector goto `application->service worker` and click `offline`. Now you're simulating being disconnected from the network. Refresh the page and you'll still see your airhorn. That's pretty cool!
 
 Read more about `clients`.claim and `skipWaiting` at [MDN/ServiceWorkerGlobalScope.skipWaiting](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting).
 
@@ -64,18 +117,17 @@ self.addEventListener('install', evt => {
   )
 });
 
-self.addEventListener('activate',  evt => {
-  evt.waitUntil(self.clients.claim());
-});
-
 self.addEventListener('fetch', evt => {
+  console.log(evt.request);
+
   evt.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
+    caches.match(evt.request).then(response => {
+      return response || fetch(evt.request);
     })
   );
 });
 ```
+
 
 
 ## App Manifest

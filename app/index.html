@@ -36,6 +36,25 @@
     <script src=/scripts/main.min.js></script>
 
     <!-- register service worker script goes here -->
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+          .then((registration) => {
+            console.info('Service Worker Registered');
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+
+        navigator.serviceWorker.ready
+          .then((registration) => {
+             console.info('Service Worker Ready');
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      }
+    </script>
 
   </body>
 </html>
