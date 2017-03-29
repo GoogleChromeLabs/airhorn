@@ -28,14 +28,6 @@ var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
 
-// Lint JavaScript
-gulp.task('jshint', function() {
-  return gulp.src(['app/scripts/**/*.js', 'app/styleguide/**/*.js'])
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-});
 
 // Optimize Images
 gulp.task('images', function() {
@@ -172,7 +164,7 @@ gulp.task('serve', ['styles'], function() {
 
   gulp.watch(['app/**/**/**/*.html'], reload);
   gulp.watch(['app/**/**/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js','app/styleguide/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.js','app/styleguide/**/*.js']);
   gulp.watch(['app/images/**/*'], reload);
 });
 
