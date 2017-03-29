@@ -4,9 +4,7 @@
     <meta charset='utf-8'>
     <title>The Air Horner</title>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='description' content='An Air horn. Probably the best air horn web app there is.'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='canonical' href='https://airhorner.com/'>
     <link rel='manifest' href='manifest.json'>
     <meta name='mobile-web-app-capable' content='yes'>
     <meta name='apple-mobile-web-app-capable' content='yes'>
@@ -18,19 +16,9 @@
     <meta name='msapplication-TileImage' content='/images/touch/Airhorner_144.png'>
     <meta name='msapplication-TileColor' content='#2196F3'>
     <meta name='theme-color' content='#2196F3'>
-    <meta property='og:title' content='Air Horn'>
-    <meta property='og:type' content='website'>
-    <meta property='og:image' content='https://airhorner.com/images/touch/Airhorner_192.png'>
-    <meta property='og:url' content='https://airhorner.com/'>
-    <meta property='og:description' content='The best and easiest Air Horn web app there is. No install just use it right away in your browser!'>
-    <meta name='twitter:card' content='summary'>
-    <meta name='twitter:url' content='https://airhorner.com/'>
-    <meta name='twitter:title' content='Air Horn'>
-    <meta name='twitter:description' content='The best and easiest Air Horn web app there is. No install just use it right away in your browser!'>
-    <meta name='twitter:image' content='https://airhorner.com/images/touch/Airhorner_192.png'>
-    <meta name='twitter:creator' content='@paul_kinlan'>
     <link rel='stylesheet' href='styles/main.css'>
   </head>
+
   <body>
     <div id='container'>
       <div id='airhorn'>
@@ -46,25 +34,8 @@
       <span class='tooltip'></span>
     </div>
     <script src=/scripts/main.min.js></script>
-    <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js', { scope: '/' })
-          .then(function(registration) {
-                console.log('Service Worker Registered');
-          });
 
-        navigator.serviceWorker.ready.then(function(registration) {
-           console.log('Service Worker Ready');
-        });
-      }
+    <!-- register service worker script goes here -->
 
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-59325548-2', 'auto');
-      ga('send', 'pageview');
-    </script>
   </body>
 </html>
