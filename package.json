@@ -23,7 +23,8 @@
     "gulp-useref": "^1.2.0",
     "psi": "^1.0.6",
     "run-sequence": "^1.1.1",
-    "es6-promise": "^3.2.1"
+    "es6-promise": "^3.2.1",
+    "comlink": "*"
   },
   "repository": {
     "type": "git",
