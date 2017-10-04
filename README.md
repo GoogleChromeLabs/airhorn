@@ -6,7 +6,7 @@ It demonstrates simple offline usage combined with simple audio looping via web 
 
 ## Installing
 
-Whilst you don't need to use the build process, if you want to host this publically it is recommended 
+Whilst you don't need to use the build process, if you want to host this publicly it is recommended 
 that you optimise all the assets for deployment and as such it is recommended that you run the 
 following command in the current working directory:
 
@@ -30,7 +30,7 @@ start a simple web server up is to use Python's SimpleHTTPServer.  Run the follo
     cd app && python -m SimpleHTTPServer 3000
 
 This will just load the existing contents of the directory up and it won't support things like live
-reload and inline optimizations.  To run the project with optimaztions in place and to support live reload
+reload and inline optimizations.  To run the project with optimizations in place and to support live reload
 run the following command:
 
     gulp serve
