@@ -30,6 +30,7 @@ self.addEventListener('install', e => {
         `/styles/main.css?timestamp=${timeStamp}`,
         `/scripts/main.min.js?timestamp=${timeStamp}`,
         `/scripts/comlink.global.js?timestamp=${timeStamp}`,
+        `/scripts/messagechanneladapter.global.js?timestamp=${timeStamp}`,
         `/sounds/airhorn.mp3?timestamp=${timeStamp}`
       ])
       .then(() => self.skipWaiting());
