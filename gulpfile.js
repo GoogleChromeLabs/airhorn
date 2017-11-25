@@ -81,6 +81,12 @@ gulp.task('sounds', function() {
     .pipe($.size({title: 'sounds'}));
 });
 
+gulp.task('well-known', function() {
+  return gulp.src(['app/.well-known/**'])
+    .pipe(gulp.dest('dist/.well-known/'))
+    .pipe($.size({title: 'well-known'}));
+});
+
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function() {
 
@@ -188,7 +194,7 @@ gulp.task('serve:dist', ['default'], function() {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function(cb) {
-  runSequence('styles', ['html', 'scripts', 'styles', 'images', 'fonts', 'sounds', 'copy', 'copy-workerscripts'], cb);
+  runSequence('styles', ['html', 'scripts', 'styles', 'images', 'fonts', 'sounds', 'copy', 'well-known', 'copy-workerscripts'], cb);
 });
 
 // Run PageSpeed Insights
