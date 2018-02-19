@@ -17,9 +17,7 @@
  *
  */
 
-// Version 0.6.4
-const version = '0.6.4';
-
+// Version 0.6.5
 self.addEventListener('install', e => {
   const timeStamp = Date.now();
   e.waitUntil(
