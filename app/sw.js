@@ -17,8 +17,8 @@
  *
  */
 
-// Version 0.6.2
-let version = '0.6.2';
+// Version 0.6.3
+let version = '0.6.3';
 
 self.addEventListener('install', e => {
   let timeStamp = Date.now();
