@@ -18,10 +18,10 @@
  */
 
 // Version 0.6.3
-let version = '0.6.3';
+const version = '0.6.3';
 
 self.addEventListener('install', e => {
-  let timeStamp = Date.now();
+  const timeStamp = Date.now();
   e.waitUntil(
     caches.open('airhorner').then(cache => {
       return cache.addAll([
@@ -33,18 +33,18 @@ self.addEventListener('install', e => {
         `/scripts/messagechanneladapter.global.js?timestamp=${timeStamp}`,
         `/sounds/airhorn.mp3?timestamp=${timeStamp}`
       ])
-      .then(() => self.skipWaiting());
+          .then(() => self.skipWaiting());
     })
-  )
+  );
 });
 
-self.addEventListener('activate',  event => {
+self.addEventListener('activate', event => {
   event.waitUntil(self.clients.claim());
 });
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request, {ignoreSearch:true}).then(response => {
+    caches.match(event.request, {ignoreSearch: true}).then(response => {
       return response || fetch(event.request);
     })
   );
