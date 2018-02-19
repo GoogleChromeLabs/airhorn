@@ -1,8 +1,0 @@
-[{
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "io.github.jakearchibald.svgomg",
-      "sha256_cert_fingerprints": ["12:32:FB:CA:2D:C8:B5:3E:DE:A1:7E:3C:FD:BA:18:69:4E:7F:13:80:AD:5E:D4:AC:74:43:62:72:43:14:C6:62"]}
-  }]
-  
