@@ -24,10 +24,9 @@ simple execute the following command from the root directory:
 
 ## Running
 
-There are number of ways to run Airhorner.  The simplest (if you have Python installed) is to
-start a simple web server up is to use Python's SimpleHTTPServer.  Run the following:
+There are number of ways to run Airhorner.  The simplest is to run the included simple express server
 
-    cd app && python -m SimpleHTTPServer 3000
+    npm install --production && npm start
 
 This will just load the existing contents of the directory up and it won't support things like live
 reload and inline optimizations.  To run the project with optimizations in place and to support live reload

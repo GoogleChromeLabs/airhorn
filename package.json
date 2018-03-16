@@ -2,6 +2,12 @@
   "name": "airhorn",
   "version": "1.0.0",
   "description": "A sample web app that lets you use your site as an airhorn.",
+  "scripts": {
+    "start": "node srcServer.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "devDependencies": {
     "browser-sync": "^2.7.13",
     "comlinkjs": "^2.2.0",
