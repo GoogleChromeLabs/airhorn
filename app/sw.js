@@ -17,11 +17,12 @@
  *
  */
 
-// Version 0.6.7
+const version = "0.6.8";
+const cacheName = `airhorner-${version}`;
 self.addEventListener('install', e => {
   const timeStamp = Date.now();
   e.waitUntil(
-    caches.open('airhorner').then(cache => {
+    caches.open(cacheName).then(cache => {
       return cache.addAll([
         `/`,
         `/index.html?timestamp=${timeStamp}`,
@@ -42,7 +43,9 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   event.respondWith(
-    caches.match(event.request, {ignoreSearch: true}).then(response => {
+    caches.open(cacheName)
+      .then(cache => cache.match(event.request, {ignoreSearch: true}))
+      .then(response => {
       return response || fetch(event.request);
     })
   );
