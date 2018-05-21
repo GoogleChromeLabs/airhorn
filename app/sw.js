@@ -17,7 +17,7 @@
  *
  */
 
-const version = "0.6.9";
+const version = "0.6.10";
 const cacheName = `airhorner-${version}`;
 self.addEventListener('install', e => {
   const timeStamp = Date.now();
@@ -25,12 +25,13 @@ self.addEventListener('install', e => {
     caches.open(cacheName).then(cache => {
       return cache.addAll([
         `/`,
-        `/index.html?timestamp=${timeStamp}`,
-        `/styles/main.css?timestamp=${timeStamp}`,
-        `/scripts/main.min.js?timestamp=${timeStamp}`,
-        `/scripts/comlink.global.js?timestamp=${timeStamp}`,
-        `/scripts/messagechanneladapter.global.js?timestamp=${timeStamp}`,
-        `/sounds/airhorn.mp3?timestamp=${timeStamp}`
+        `/index.html`,
+        `/styles/main.css`,
+        `/scripts/main.min.js`,
+        `/scripts/comlink.global.js`,
+        `/scripts/messagechanneladapter.global.js`,
+        `/scripts/pwacompat.min.js`,
+        `/sounds/airhorn.mp3`
       ])
           .then(() => self.skipWaiting());
     })
