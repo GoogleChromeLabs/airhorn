@@ -55,8 +55,7 @@ body
 #installer {
     position: absolute;
     opacity: 0;
-    bottom: 20px;
-    left: 0;
+    top: 0;
     right: 0;
     text-align: center;
     transition: opacity 300ms ease-in-out;
@@ -67,7 +66,7 @@ body
 }
 
 #installer .button {
-    border: solid 1px white;
+    border: white 1px solid;
     margin:10px;
     padding: 10px;
     color: white;
