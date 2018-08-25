@@ -20,7 +20,6 @@
 const version = "0.6.11";
 const cacheName = `airhorner-${version}`;
 self.addEventListener('install', e => {
-  const timeStamp = Date.now();
   e.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
