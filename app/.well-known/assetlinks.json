@@ -1,0 +1,7 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.airhorner.twa",
+      "sha256_cert_fingerprints": ["1B:0B:A3:8A:64:AA:D9:AF:0F:AD:24:6B:5E:29:F3:1F:24:0D:A9:0B:85:9C:B4:1B:C1:40:5C:70:7A:05:C3:DC"]}
+  }]
