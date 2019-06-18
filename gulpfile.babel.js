@@ -37,6 +37,13 @@ const wellknown = () =>
         title: 'wellknown'
       }));
 
+const scripts = () =>
+  gulp.src('app/scripts/**/*')
+      .pipe(gulp.dest('dist/scripts'))
+      .pipe($.size({
+        title: 'scripts'
+      }));
+
 // Copy all files at the root level (app)
 const copy = () =>
   gulp.src(['app/*', '!app/*.html'], {
@@ -131,7 +138,7 @@ const client = (done) => {
   });
 };
 
-const build = gulp.series(clean, copy, gulp.parallel(client, styles, sounds, wellknown, html, images));
+const build = gulp.series(clean, copy, scripts, gulp.parallel(client, styles, sounds, wellknown, html, images));
 
 gulp.task('default', build);
 gulp.task('clean', clean);
