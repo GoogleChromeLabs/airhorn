@@ -1,6 +1,7 @@
 {
   "name": "The Air Horner",
   "short_name": "Airhorner",
+  "description": "The world's best airhorner, and it's free",
   "icons": [
       {
         "src": "/images/touch/android-launchericon-48-48.png",
