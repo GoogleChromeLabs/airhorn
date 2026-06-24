@@ -4,7 +4,7 @@
   "description": "A sample web app that lets you use your site as an airhorn.",
   "devDependencies": {
     "comlinkjs": "^2.4.1",
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.29.6",
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.0",
     "del": "^1.2.0",
